@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
+<body>
+  <div id="user">
+    <p id='name'></p>
+    <p id = 'age'></p>
+  </div>
+  <form>
+    <p>
+      <label for='name'>Name</label>
+      <input type='text' name='name' id='name'>
+    </p>
+    <p>
+      <label for='artist'>Artist</label>
+      <input type='text' name='artist' id='artist'>
+    </p>
+    <button id="addSong" data-id {{user.id}}>Add Song</button>
+  </form>
+  <ul id="listSongs">
+    {{#each user.pets}}
+    <li>Name:  | Artist: </li>
+
+  </ul>
+  
+  <script src='../dashboard.js'></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+</html>

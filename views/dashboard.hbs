@@ -1,4 +1,7 @@
-<div id="user">Add Song here!</div>
+<div id="user">
+  <p>{{ user.name }}</p>
+  <p>{{ user.age }}</p>
+</div>
 <form>
   <p>
     <label for='name'>Name</label>
@@ -8,8 +11,12 @@
     <label for='artist'>Artist</label>
     <input type='text' name='artist' id='artist'>
   </p>
-  <button id="addSong">Add Song</button>
+  <button id="addSong" data-id {{ user.id }}>Add Song</button>
 </form>
-<ul id="listSongs"></ul>
+<ul id="listSongs">
+  {{#each user.pets}}
+  <li>Name: {{this.dataValues.name}} | Name: {{this.dataValues.artist}}</li>
+  {{/each}}
+</ul>
 
-<script src='./dashboard.js'></script>
+<script src='../dashboard.js'></script>
