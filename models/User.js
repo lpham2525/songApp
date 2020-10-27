@@ -3,6 +3,7 @@ const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../connection')
 
 class User extends Model { }
+
 User.init({
   name: {
     type: DataTypes.STRING,
@@ -13,7 +14,5 @@ User.init({
     allowNull: false
   }
 }, { sequelize, modelName: 'user' })
-
-User.sync()
 
 module.exports = User

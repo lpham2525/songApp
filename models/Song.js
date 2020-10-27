@@ -2,6 +2,7 @@ const { Model, DataTypes } = require('sequelize')
 const sequelize = require('../connection')
 
 class Song extends Model { }
+
 Song.init({
   name: {
     type: DataTypes.STRING,
@@ -12,7 +13,5 @@ Song.init({
     allowNull: false
   }
 }, { sequelize, modelName: 'song' })
-
-Song.sync()
 
 module.exports = Song
